@@ -17,7 +17,7 @@ function MainCities() {
 
     const handleInput = (event) => {
         const value = event.target.value.trim().toLowerCase();
-        dispatch(filterByname(value)); // Despacha la acción filterByname con el valor del input
+        dispatch(filterByname(value)); 
     };
 
     return (

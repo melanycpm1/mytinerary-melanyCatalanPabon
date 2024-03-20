@@ -16,10 +16,11 @@ function City() {
     
     return (
         <>
-            <h1>Detalles</h1>
+            <h1 className="text-lg md:text-xl lg:text-2xl xl:ext-3xl text-center my-10">Detalles</h1>
             <section>
-                <h2>{ciudad.name}</h2>
+                <h2 className="text-sm md:text-base lg:text-lg xl:text-xl text-center my-10">{ciudad.name}</h2>
                 <p>{ciudad.description}</p>
+                <img src={ciudad.image} alt={ciudad.name}/>
                 {ciudad.itineraries && ciudad.itineraries.map((itinerary, index) => (
                     <div key={index}>
                         <h3>{itinerary.title}</h3>
@@ -43,5 +44,6 @@ function City() {
         </>
     );
 }
+/*voy a dejar el estilo para lo ultimo */
 
 export default City;
