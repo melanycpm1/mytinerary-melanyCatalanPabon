@@ -8,7 +8,7 @@ function City() {
 
     useEffect(() => {
         getCityByName(params._id).then((res) => {
-            setCiudad(res.data); // Assuming 'res.data' contains the city object
+            setCiudad(res.data); 
         });
     }, [params._id]);
 
@@ -19,11 +19,29 @@ function City() {
             <h1>Detalles</h1>
             <section>
                 <h2>{ciudad.name}</h2>
-                <img src={ciudad.image} alt={ciudad.name}/>
                 <p>{ciudad.description}</p>
+                {ciudad.itineraries && ciudad.itineraries.map((itinerary, index) => (
+                    <div key={index}>
+                        <h3>{itinerary.title}</h3>
+                        <img src={itinerary.activities[0]} alt={itinerary.title} />
+                        <img src={itinerary.guide_image} alt={itinerary.guide}/>
+                        <p>Guía: {itinerary.guide}</p>
+                        <p>Precio: {itinerary.price}</p>
+                        <p>Duración: {itinerary.duration} horas</p>
+                        <p>Descripción: {itinerary.description}</p>
+                        <p>Actividades:</p>
+                        <ul>
+                            {itinerary.activities.map((activity, idx) => (
+                                <li key={idx}>
+                                    <img src={activity} alt={`Actividad ${idx + 1}`} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </section>
         </>
     );
 }
-/**/
-export default City
+
+export default City;
