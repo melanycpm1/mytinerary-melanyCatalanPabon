@@ -16,6 +16,7 @@ function MainCities() {
     }, [dispatch]);
 
     const handleInput = (event) => {
+        console.log(event)
         const value = event.target.value.trim().toLowerCase();
         dispatch(filterByname(value));
     };
