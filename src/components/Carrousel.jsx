@@ -19,17 +19,17 @@ function Carrousel({ start, end }) {
     const country = countrySlice[indice];
 
     return (
-        <div>
-            <CarrouselItem country={country} />
-            <div className="flex justify-between mt-5">
-                <div>
-                    <button className="p-3 bg-sky-300" onClick={previous}>«—</button>
-                </div>
-                <div>
-                    <button className="p-3 bg-sky-300" onClick={next}>—»</button>
-                </div>
-            </div>
+        <div className="max-w-lg mx-auto">
+        <CarrouselItem country={country} />
+        <div className="flex justify-between items-center mt-5">
+            <button className="px-4 py-2 bg-sky-500 text-white rounded-lg focus:outline-none hover:bg-sky-600 transition-colors duration-300 ease-in-out" onClick={previous}>
+                « Previous
+            </button>
+            <button className="px-4 py-2 bg-sky-500 text-white rounded-lg focus:outline-none hover:bg-sky-600 transition-colors duration-300 ease-in-out" onClick={next}>
+                Next »
+            </button>
         </div>
+    </div>
     );
 }
 
